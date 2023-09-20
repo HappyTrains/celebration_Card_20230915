@@ -1,6 +1,7 @@
 //Global variables
 int appWidth, appheight;
-float xRect, yRect, widthRect, heightRect;
+float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
+float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 //
 void setup() {
   //print & Println
@@ -15,18 +16,30 @@ void setup() {
   int appHeight = height;
  //
  //Population
- xRect = appWidth*0;
- yRect = appHeight*0;
- widthRect =
+ xRectBackground = appWidth*0;
+ yRectBackground = appHeight*0;
+ widthRectBackground = appWidth -1;
+ heightRectBackground = appHeight -1;
+ xRectQuit = appWidth*1/4;
+ yRectQuit = appHeight*1/4;
+ widthRectQuit = appWidth*1/2;
+ heightRectQuit = appHeight*1/2;
+ //
 } //End setup
 //
 void draw() {
-  rect(xRect, yRect, widthRect, heightwidth);
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
 } //end draw
 void keyPressed() {
 } //End KeyPressed
 //
 void mousePressed() {
+  //When mouse is pressed
+  println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
+  //
+  if ( mouseX>xRectQuit && mouseX<xRectQuit+ widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+ heightRectQuit ) exit();
+  //
 } //End mousePressed
 //
   
