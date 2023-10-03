@@ -2,6 +2,10 @@
 int appWidth, appheight;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
+//String ; //All tect variables as name:value pairs
+//PFont ; //All fonts used
+//color ; //colour palette & inks
+int sizeFont, size; //text variables
 //
 void setup() {
   //print & Println
@@ -25,9 +29,36 @@ void setup() {
  widthRectQuit = appWidth*1/2;
  heightRectQuit = appHeight*1/2;
  //
+ //DIVs
+ rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+ rect();
+ //rect(); //
+ //rect(); //
+ //rect(); //
+ //rect(); //
+ //rect(); //
+ //rect(); //
+ //
+ // Text Setup
+  // Fonts from OS (Operating system)
+  //String[] fontList = PFont.list(); //Lists all fonts available on OS
+  printArray(fontList);
+  titleFont = createFont("Calibri", 55);
+  footerFont = createFont("Arial Black", 55); //Verify the font exists in Processing.Java
+  // Tools / Create Font / Find Font / Do not press "OK", known bug
+  //
+} //End setup
+ //
 } //End setup
 //
 void draw() {
+  //Drawing text
+  //fill([colourName]); //ink
+  textAlign(CENTER, BOTTOM);
+  //Size = [pixelNumberFontSize]; //interger number
+  //textFont([fontVariable], Size);
+  //text ( [textStringName], [four rect() variables copied from DIVs]);
+  //
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
 } //end draw
